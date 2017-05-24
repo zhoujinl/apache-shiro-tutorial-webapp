@@ -39,9 +39,11 @@
             //<c:out/> tag next:
 
             request.setAttribute("account", org.apache.shiro.SecurityUtils.getSubject().getPrincipals().oneByType(java.util.Map.class));
+            System.out.println("xxxxx");
+            System.out.println(org.apache.shiro.SecurityUtils.getSubject().getPrincipals().toString());
+       %>
 
-        %>
-        <c:out value="${account.givenName}"/></shiro:user>!
+        <c:out value=" ${account}"/></shiro:user>!
         ( <shiro:user><a href="<c:url value="/logout"/>">Log out</a></shiro:user>
         <shiro:guest><a href="<c:url value="/login.jsp"/>">Log in</a></shiro:guest> )
     </p>
